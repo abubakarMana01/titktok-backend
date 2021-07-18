@@ -1,0 +1,39 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+.app {
+	height: 100vh;
+	background-color: #000;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.videos_container {
+	max-height: 90vh;
+	scroll-snap-type: y mandatory;
+	overflow-y: scroll;
+	border-radius: 20px;
+}
+
+.videos_container {
+	-ms-overflow-style: none; /* Internet Explorer 10+ */
+	scrollbar-width: none; /* Firefox */
+}
+.videos_container::-webkit-scrollbar {
+	display: none; /* Safari and Chrome */
+}
+
+@keyframes musicDiscRotate {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
