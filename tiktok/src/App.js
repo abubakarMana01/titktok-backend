@@ -6,14 +6,13 @@ function App() {
 	const [posts, setPosts] = useState([]);
 
 	useEffect(() => {
-		fetch("http://localhost:3001/posts")
+		fetch("/posts")
 			.then(res => {
 				if (res.ok) {
 					return res.json();
 				}
 			})
 			.then(data => {
-				console.log(data);
 				setPosts(data);
 			})
 			.catch(err => console.log(err));

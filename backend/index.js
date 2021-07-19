@@ -18,8 +18,9 @@ mongoose
 		useUnifiedTopology: true,
 	})
 	.then(() => {
+		console.log("Connected to mongoDB");
 		app.listen(port, () => {
-			console.log(`Connected to mongoDB port ${port}`);
+			console.log(`Listening for requests on port ${port}`);
 		});
 	});
 

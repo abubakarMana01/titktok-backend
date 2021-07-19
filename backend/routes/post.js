@@ -2,8 +2,12 @@ const router = require("express").Router();
 const Post = require("../models/post");
 
 router.get("/", async (req, res) => {
-	const post = await Post.find();
-	res.json(post);
+	try {
+		const post = await Post.find();
+		res.json(post);
+	} catch (err) {
+		console.log(err);
+	}
 });
 
 router.post("/", async (req, res) => {
@@ -17,7 +21,7 @@ router.post("/", async (req, res) => {
 		musicName: req.body.musicName,
 	});
 
-	post.save();
+	await post.save();
 	res.send(post);
 });
 

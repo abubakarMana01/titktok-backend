@@ -36,7 +36,7 @@ function VideoComponent({ post }) {
 const VideoWrapper = styled.div`
 	max-width: 330px;
 	height: 100%;
-	background: white;
+	background: #000;
 	scroll-snap-align: start;
 	position: relative;
 `;
