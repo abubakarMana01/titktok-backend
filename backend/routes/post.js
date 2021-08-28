@@ -21,8 +21,12 @@ router.post("/", async (req, res) => {
 		musicName: req.body.musicName,
 	});
 
-	await post.save();
-	res.send(post);
+	try {
+		await post.save();
+		res.send(post);
+	} catch (err) {
+		res.status(400).send(err.message);
+	}
 });
 
 module.exports = router;

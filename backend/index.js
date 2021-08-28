@@ -1,8 +1,8 @@
 const express = require("express");
+require("dotenv").config();
+const cors = require("cors");
 const mongoose = require("mongoose");
 const postRoute = require("./routes/post");
-const cors = require("cors");
-require("dotenv").config();
 
 const app = express();
 
@@ -22,6 +22,9 @@ mongoose
 		app.listen(port, () => {
 			console.log(`Listening for requests on port ${port}`);
 		});
+	})
+	.catch(err => {
+		console.log("Unable to connect to database:", err.message);
 	});
 
 app.use("/posts", postRoute);
